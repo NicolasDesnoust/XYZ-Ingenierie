@@ -21,6 +21,14 @@ npm install
 npm run quick
 ```
 
+## Connexion
+Pour tester au complet les fonctionnalités de l'application, le profil administrateur ci-dessous est mis à votre disposition:
+
+```
+login = compte.test@gmail.com
+password = comptetest
+```
+
 ## Suivi du cahier des charges
 ### Json Server
 - Le back-end a été mocké avec Json-server.
@@ -36,7 +44,7 @@ npm run quick
 - L'authentification est réalisé via un service tierce (Firebase) et tous les profils demandés ont été implémentés. L'accès aux pages est donc restreint en fonction de ces premiers.
 ## Ecrans disponibles
 - L'application contient toutes les pages requises au minimum, à savoir:
-Une page d’accueil permettant de rechercher l’ensemble des informations publiques des
+  - Une page d’accueil permettant de rechercher l’ensemble des informations publiques des
 références commerciales
   - Une page d’affichage d’une référence permettant d’afficher l’ensemble des informations
   publiques des références commerciales
@@ -57,6 +65,5 @@ L'export des références commerciales n'a pas été implémenté.
 - [Firebase](https://firebase.google.com/)
 - [Bulma](https://bulma.io/)
 - [FontAwesome](https://bulma.io/)
-
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
