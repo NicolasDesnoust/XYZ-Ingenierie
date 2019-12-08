@@ -1,0 +1,12 @@
+<ul class="list">
+  <li *ngFor="let account of accounts; trackBy: byId; let i = index" role="presentation">
+    <div class="card">
+      <app-card-content [name]="account.name" [subinfo]="'rôle: ' + (Role[account.role])"
+      ></app-card-content>
+      <footer class="card-footer">
+        <app-button-footer class="card-footer-item" [className]="'delete-item'" [iconClasses]="'fas fa-trash'" (clicked)="deleteAccount($event)" label="Supprimer" [item]="account"></app-button-footer>
+        <app-button-footer class="card-footer-item" [className]="'edit-item'" [iconClasses]="'fas fa-edit'" (clicked)="selectAccount($event)" label="Modifier" [item]="account"></app-button-footer>
+      </footer>
+    </div>
+  </li>
+</ul>
