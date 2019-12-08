@@ -21,6 +21,14 @@ npm install
 npm run quick
 ```
 
+## Connexion
+Pour tester au complet les fonctionnalités de l'application, le profil administrateur ci-dessous est mis à votre disposition:
+
+```
+login = compte.test@gmail.com
+password = comptetest
+```
+
 ## Suivi du cahier des charges
 ### Json Server
 - Le back-end a été mocké avec Json-server.
@@ -57,6 +65,5 @@ L'export des références commerciales n'a pas été implémenté.
 - [Firebase](https://firebase.google.com/)
 - [Bulma](https://bulma.io/)
 - [FontAwesome](https://bulma.io/)
-
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
