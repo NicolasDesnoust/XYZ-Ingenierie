@@ -55,6 +55,8 @@ L'export des références commerciales n'a pas été implémenté.
 - [node](https://nodejs.org/en/)
 - [npm](https://www.npmjs.com/)
 - [Firebase](https://firebase.google.com/)
+- [Bulma](https://bulma.io/)
+- [FontAwesome](https://bulma.io/)
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
