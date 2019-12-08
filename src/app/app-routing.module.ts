@@ -26,8 +26,6 @@ const routes: Routes = [
   },
   { path: 'about', component: AboutComponent },
   { path: 'login', component: LoginComponent, canActivate: [AuthGuard] },
-  { path: 'register', component: RegisterComponent, canActivate: [AuthGuard] },
-  { path: 'user', component: UserComponent,  resolve: { data: UserResolver}},
   { path: 'not-authorized', component: NotAuthorizedComponent },
   { path: '**', component: NotFoundComponent },
 ];
