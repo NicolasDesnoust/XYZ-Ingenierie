@@ -14,9 +14,11 @@ import {Router} from '@angular/router';
     <div class="navbar-menu">
       <div class="navbar-end">
         <div class="navbar-item">
+          <strong *ngIf="name" >{{name}}&nbsp;&nbsp;</strong>
+          <strong *ngIf="role">|&nbsp;&nbsp;{{role}}&nbsp;&nbsp;</strong>
           <div class="buttons">
             <a class="button is-primary" *ngIf="loggedin" (click)="logout()" >
-            <strong>{{name}}: se déconnecter</strong>
+            <strong>se déconnecter</strong>
             </a>
             <a class="button is-primary" *ngIf="!loggedin" [routerLink]="['/login']" >
             <strong>se connecter</strong>
@@ -37,6 +39,7 @@ import {Router} from '@angular/router';
 export class HeaderBarLinksComponent {
   private loggedin: boolean;
   private name: string;
+  private role: string;
 
   constructor(
     public userService: UserService,
@@ -60,8 +63,10 @@ export class HeaderBarLinksComponent {
       next: value => {
         if (value) {
           this.name = value.name;
+          this.role = value.role;
         } else {
           this.name = undefined;
+          this.role = undefined;
         }
       },
       error: error => console.error(error.toString())
