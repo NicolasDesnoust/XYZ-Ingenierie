@@ -16,7 +16,6 @@ import { startWith, map, merge } from 'rxjs/operators';
 
 import * as _ from 'lodash';
 import { Reference } from '../../model/reference';
-import * as dept from '../../../../../assets/json/dept.json';
 import { Domain } from '../../model/domain.enum';
 
 @Component({

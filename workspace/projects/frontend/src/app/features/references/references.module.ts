@@ -1,8 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { Routes, RouterModule } from '@angular/router';
 
 import { CanManageRefsGuard } from '../../core/auth/guards/can-manage-refs.guard';
@@ -45,8 +43,6 @@ const routes: Routes = [
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    MatAutocompleteModule,
-    MatFormFieldModule,
   ],
   exports: [ReferencesComponent],
   declarations: [

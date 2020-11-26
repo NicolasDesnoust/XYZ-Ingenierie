@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { ButtonFooterComponent } from './components/button-footer.component';
 import { CardContentComponent } from './components/card-content.component';
 import { ListHeaderComponent } from './components/list-header.component';
 import { ModalComponent } from './components/modal.component';
-import { RouterModule } from '@angular/router';
+import { MaterialModule } from './modules/material.module';
 
 const COMPONENTS = [
   ButtonFooterComponent,
@@ -16,7 +17,13 @@ const COMPONENTS = [
 ];
 
 @NgModule({
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule,
+    MaterialModule,
+  ],
   declarations: [COMPONENTS],
   exports: [
     COMPONENTS,
@@ -24,6 +31,7 @@ const COMPONENTS = [
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
+    MaterialModule,
   ],
 })
 export class SharedModule {}
