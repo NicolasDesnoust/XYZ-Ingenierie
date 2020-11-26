@@ -1,0 +1,93 @@
+<div class="card edit-detail">
+  <header class="card-header">
+    <p class="card-header-title">
+      {{ editingAccount.name }}
+      &nbsp;
+    </p>
+  </header>
+
+  <div class="card-content">
+    <div class="content">
+      <div class="field" *ngIf="editingAccount.id">
+        <label class="label" for="id"> id </label>
+        <input
+          name="id"
+          class="input"
+          type="text"
+          [(ngModel)]="editingAccount.id"
+          placeholder="e.g. HeroColleen"
+          readOnly
+        />
+      </div>
+
+      <div class="field">
+        <label class="label" for="name"> nom </label>
+        <input
+          name="name"
+          class="input"
+          type="text"
+          [(ngModel)]="editingAccount.name"
+          placeholder="e.g. Colleen"
+        />
+      </div>
+
+      <div class="field">
+        <label class="label" for="email"> adresse e-mail </label>
+        <input
+          name="email"
+          id="email"
+          class="input"
+          type="email"
+          [(ngModel)]="editingAccount.email"
+          placeholder="e.g. colleen.fran@gmail.com"
+          [readOnly]="editingAccount.id"
+        />
+      </div>
+
+      <div class="field" *ngIf="!editingAccount.id">
+        <label class="label" for="password"> mot de passe </label>
+        <input
+          name="password"
+          id="password"
+          class="input"
+          type="password"
+          [(ngModel)]="password"
+          placeholder=""
+        />
+      </div>
+
+      <div class="select is-fullwidth">
+        <label class="label" for="role"> rôle </label>
+        <select name="role" [(ngModel)]="editingAccount.role">
+          <option
+            *ngFor="let role of Role | keyvalue"
+            [ngValue]="role.key"
+            [selected]="role.value === 'Anonyme'"
+          >
+            {{ role.value }}
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <footer class="card-footer">
+    <app-button-footer
+      class="card-footer-item"
+      [className]="'cancel-button'"
+      [iconClasses]="'fas fa-undo'"
+      (clicked)="clear()"
+      label="Annuler"
+      [item]="editingAccount"
+    ></app-button-footer>
+
+    <app-button-footer
+      class="card-footer-item"
+      [className]="'save-button'"
+      [iconClasses]="'fas fa-save'"
+      (clicked)="saveAccount()"
+      label="Enregistrer"
+      [item]="editingAccount"
+    ></app-button-footer>
+  </footer>
+</div>
