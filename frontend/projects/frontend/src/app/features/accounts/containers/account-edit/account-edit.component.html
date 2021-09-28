@@ -1,0 +1,51 @@
+<form [formGroup]="accountForm" style="width: 100%">
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <!-- BEGIN Firstname input -->
+      <mat-form-field appearance="fill">
+        <mat-label>Prénom</mat-label>
+        <input matInput type="text" required formControlName="firstname" />
+        <mat-error *ngIf="f.firstname.invalid" [for]="f.firstname"></mat-error>
+      </mat-form-field>
+      <!-- END Firstname input -->
+    </div>
+
+    <div class="col-sm-12 col-md-6">
+      <!-- BEGIN Lastname input -->
+      <mat-form-field appearance="fill">
+        <mat-label>Nom</mat-label>
+        <input matInput type="text" required formControlName="lastname" />
+        <mat-error *ngIf="f.lastname.invalid" [for]="f.lastname"></mat-error>
+      </mat-form-field>
+      <!-- END Lastname input -->
+    </div>
+
+    <div class="col-sm-12">
+      <!-- BEGIN Role input -->
+      <mat-form-field *ngIf="roles$ | async as roles" appearance="fill">
+        <mat-label>Rôles</mat-label>
+        <app-chips-multiselect
+          formControlName="roles"
+          [collection]="roles"
+          [extractLabelCallback]="extractLabel"
+          [extractIdCallback]="extractId"
+          placeholder="Nouveau rôle..."
+          chipListLabel="Rôles de l'utilisateur"
+          [required]="true"
+        ></app-chips-multiselect>
+        <mat-error *ngIf="f.roles.invalid" [for]="f.roles"></mat-error>
+      </mat-form-field>
+      <!-- END Role input -->
+    </div>
+
+    <div class="col-sm-12">
+      <!-- BEGIN Email input -->
+      <mat-form-field appearance="fill">
+        <mat-label>E-mail</mat-label>
+        <input matInput type="text" required formControlName="email" />
+        <mat-error *ngIf="f.email.invalid" [for]="f.email"></mat-error>
+      </mat-form-field>
+      <!-- END Email input -->
+    </div>
+  </div>
+</form>

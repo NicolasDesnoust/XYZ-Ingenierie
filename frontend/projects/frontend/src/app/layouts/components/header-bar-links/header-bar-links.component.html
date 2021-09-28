@@ -1,0 +1,27 @@
+<!-- BEGIN Profile infos -->
+<span *ngIf="name">{{ name }}&nbsp;&nbsp;</span>
+<span *ngIf="role">|&nbsp;&nbsp;{{ role }}&nbsp;&nbsp;</span>
+<!-- END Profile infos -->
+
+<!-- BEGIN Login/Profile buttons -->
+<ng-container *ngIf="loggedIn$ | async as loggedIn">
+  <button
+    class="button-std"
+    *ngIf="loggedIn"
+    mat-button
+    (click)="logout()"
+    attr.aria-label="Déconnexion"
+    matTooltip="Déconnexion"
+  >
+    <i-feather name="log-out"></i-feather>
+  </button>
+  <button
+    mat-stroked-button
+    color="primary"
+    *ngIf="!loggedIn"
+    [routerLink]="['/login']"
+  >
+    Connexion
+  </button>
+</ng-container>
+<!-- END Login/Profile buttons -->

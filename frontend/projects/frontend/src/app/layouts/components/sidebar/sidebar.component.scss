@@ -1,0 +1,57 @@
+@import 'abstracts/variables';
+@import 'abstracts/breakpoints';
+
+.matero-branding {
+  display: inline-block;
+  color: inherit;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.matero-branding-logo-expanded {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  vertical-align: middle;
+
+  [dir='rtl'] & {
+    margin-left: 10px;
+    margin-right: auto;
+  }
+}
+
+.matero-branding-name {
+  font-weight: normal;
+  vertical-align: middle;
+  text-transform: uppercase;
+  letter-spacing: 0.035rem;
+}
+
+.matero-sidebar-header {
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  height: $toolbar-height-desktop;
+  padding: 0 10px;
+  overflow: hidden;
+
+  @include bp-lt(small) {
+    & {
+      height: $toolbar-height-mobile;
+    }
+  }
+}
+
+.matero-sidebar-main {
+  height: calc(100% - #{$toolbar-height-desktop});
+  overflow: auto;
+
+  @include bp-lt(small) {
+    & {
+      height: calc(100% - #{$toolbar-height-mobile});
+    }
+  }
+}

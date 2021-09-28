@@ -1,0 +1,66 @@
+$base-color: black;
+.divider {
+  span {
+    &:first-child,
+    &:last-child {
+      /* color changes in here */
+      background-image: -webkit-gradient(
+        linear,
+        0 0,
+        0 100%,
+        from($base-color),
+        to($base-color)
+      );
+      background-image: -webkit-linear-gradient(
+        180deg,
+        $base-color,
+        $base-color
+      );
+      background-image: -moz-linear-gradient(
+        180deg,
+        $base-color,
+        $base-color
+      );
+      background-image: -o-linear-gradient(180deg, $base-color, $base-color);
+      background-image: linear-gradient(90deg, $base-color, $base-color);
+    }
+
+    &:nth-child(2) {
+      color: rgba($base-color, 0.556);
+      padding: 0px 5px;
+      width: auto;
+      white-space: nowrap;
+    }
+  }
+}
+
+.divider {
+  /* minor cosmetics */
+  display: table;
+  font-weight: bold;
+  font-size: smaller;
+  text-align: center;
+  width: 75%; /* divider width */
+  margin: 1.5rem auto; /* spacing above/below */
+
+  span {
+    display: table-cell;
+    position: relative;
+
+    &:first-child,
+    &:last-child {
+      width: 50%;
+      top: 10px; /* adjust vertical align */
+      -moz-background-size: 100% 1.5px; /* line width */
+      background-size: 100% 1.5px; /* line width */
+      background-position: 0 0, 0 100%;
+      background-repeat: no-repeat;
+    }
+
+    &:nth-child(2) {
+      padding: 0px 5px;
+      width: auto;
+      white-space: nowrap;
+    }
+  }
+}
