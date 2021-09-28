@@ -1,0 +1,35 @@
+spring:
+  data:
+    rest:
+      default-page-size: 20
+      limit-param-name: _limit
+      max-page-size: 1000
+      page-param-name: _page
+      sort-param-name: _sort
+  datasource:
+    driverClassName: org.h2.Driver
+    password: password
+    url: jdbc:h2:file:~/data/embedded-db
+    username: sa
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    generate-ddl: false
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+  main:
+    banner-mode: "off"
+  output:
+    ansi:
+      enabled: ALWAYS
+springdoc:
+  swagger-ui:
+    path: /
+xyz-ingenierie:
+  cors:
+    allowed-headers: "*,X-XSRF-Token"
+    allowed-methods: GET,POST,HEAD,OPTIONS,PUT,DELETE
+    allowed-origins: "http://localhost:4200"
