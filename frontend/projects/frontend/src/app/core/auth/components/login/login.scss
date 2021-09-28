@@ -1,0 +1,94 @@
+@import 'abstracts/breakpoints';
+
+:host {
+  display: flex;
+  height: 100vh;
+
+  .login-title {
+    margin-top: 2rem;
+    font-size: 18px;
+  }
+}
+
+.mat-form-field {
+  width: 100%;
+  padding-bottom: .5rem;
+}
+
+// Font styles
+input:-webkit-autofill::first-line {
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+input {
+  line-height: 1;
+}
+
+.wrapper {
+  align-items: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.wrapper::before {
+  content: '';
+  position: fixed;
+  top: 60%;
+  right: 0;
+  width: 125%;
+  height: 100%;
+  transform: rotate(15deg);
+}
+
+.login-container {
+  min-width: 20rem;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  .mat-card {
+    margin: 0 !important;
+    border: none;
+    background-color: transparent;
+    padding: 2rem;
+    max-width: 580px;
+
+    // @include MOBILE_MEDIAQUERY {
+    //   max-width: unset;
+    //   width: 100%;
+    // }
+
+    form {
+      .login-button {
+        margin-top: 1rem;
+      }
+    }
+
+    .social-button {
+      &.google-button {
+        background-color: #ce4646;
+        color: white;
+      }
+
+      &.github-button {
+        background-color: #424242;
+        color: white;
+      }
+
+      i {
+        position: absolute;
+        left: 1rem;
+        bottom: 0;
+        right: 0;
+        top: 0;
+        margin: auto;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}

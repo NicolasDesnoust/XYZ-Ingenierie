@@ -1,0 +1,47 @@
+<div class="content-title-group">
+  <a router-link="/">
+    <h2 class="title">{{ title }}</h2>
+  </a>
+
+  <span class="spacer"></span>
+
+  <ng-container *ngFor="let button of buttons">
+    <button
+      *ngIf="button.style === ButtonStyle.FLAT"
+      class="add-button button-std mat-elevation-z0"
+      [disabled]="isButtonDisabled(button)"
+      [loading]="isButtonLoading(button)"
+      mat-flat-button
+      color="primary"
+      (click)="execute(button)"
+      attr.aria-label="{{ button.text }} button"
+    >
+      {{ button.text }}
+      <!-- <i-feather [name]="button.icon"></i-feather> -->
+    </button>
+
+    <button
+      *ngIf="button.style === ButtonStyle.STROKED"
+      class="add-button button-std mat-elevation-z0"
+      [disabled]="isButtonDisabled(button)"
+      [loading]="isButtonLoading(button)"
+      mat-stroked-button
+      color="primary"
+      (click)="execute(button)"
+      attr.aria-label="{{ button.text }} button"
+    >
+      {{ button.text }}
+    </button>
+
+    <button
+      *ngIf="button.style === ButtonStyle.ICON"
+      class="button-std mat-elevation-z0"
+      mat-button
+      (click)="execute(button)"
+      attr.aria-label="{{ button.text }} button"
+      [matTooltip]="button.text"
+    >
+      <i-feather [name]="button.icon"></i-feather>
+    </button>
+  </ng-container>
+</div>

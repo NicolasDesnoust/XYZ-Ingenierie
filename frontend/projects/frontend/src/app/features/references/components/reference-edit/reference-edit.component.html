@@ -1,0 +1,166 @@
+<form [formGroup]="referenceForm">
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <!-- BEGIN Name input -->
+      <mat-form-field appearance="fill">
+        <mat-label>Nom</mat-label>
+        <input matInput type="text" required formControlName="name" />
+        <mat-error *ngIf="f.name.invalid" [for]="f.name"></mat-error>
+      </mat-form-field>
+      <!-- END Name input -->
+    </div>
+
+    <div class="col-sm-12 col-md-6">
+      <!-- BEGIN Client name input -->
+      <mat-form-field appearance="fill">
+        <mat-label>Nom du client</mat-label>
+        <input matInput type="text" required formControlName="clientName" />
+        <mat-error *ngIf="f.clientName.invalid" [for]="f.clientName">
+        </mat-error>
+      </mat-form-field>
+      <!-- END Client name input -->
+    </div>
+
+    <div class="col-sm-12 col-md-6">
+      <!-- BEGIN City input -->
+      <mat-form-field appearance="fill">
+        <mat-label>Ville</mat-label>
+        <input
+          matInput
+          type="text"
+          required
+          formControlName="city"
+          [matAutocomplete]="autoe"
+        />
+        <mat-autocomplete #autoe="matAutocomplete">
+          <mat-option
+            *ngFor="let city of filteredCities$ | async"
+            [value]="city"
+          >
+            {{ city }}
+          </mat-option>
+        </mat-autocomplete>
+        <mat-error *ngIf="f.city.invalid" [for]="f.city"></mat-error>
+      </mat-form-field>
+      <!-- END City input -->
+    </div>
+
+    <div class="col-sm-12 col-md-6">
+      <!-- BEGIN Department input -->
+      <mat-form-field appearance="fill">
+        <mat-label>Département</mat-label>
+        <input
+          matInput
+          type="text"
+          required
+          formControlName="department"
+          [matAutocomplete]="auto"
+        />
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option
+            *ngFor="let department of filteredDepts$ | async"
+            [value]="department"
+          >
+            {{ department }}
+          </mat-option>
+        </mat-autocomplete>
+        <mat-error
+          *ngIf="f.department.invalid"
+          [for]="f.department"
+        ></mat-error>
+      </mat-form-field>
+      <!-- END Department input -->
+    </div>
+
+    <div class="col-sm-6 col-md-6">
+      <!-- BEGIN Start year input -->
+      <mat-form-field appearance="fill">
+        <mat-label>Année de départ</mat-label>
+        <input matInput type="number" required formControlName="startYear" />
+        <mat-error *ngIf="f.startYear.invalid" [for]="f.startYear"></mat-error>
+      </mat-form-field>
+      <!-- END Start year input -->
+    </div>
+
+    <div class="col-sm-6 col-md-6">
+      <!-- BEGIN End year input -->
+      <mat-form-field appearance="fill">
+        <mat-label>Année de fin</mat-label>
+        <input matInput type="number" required formControlName="endYear" />
+        <mat-error *ngIf="f.endYear.invalid" [for]="f.endYear"></mat-error>
+      </mat-form-field>
+      <!-- END End year input -->
+    </div>
+
+    <div class="col-sm-12 col-md-6">
+      <!-- BEGIN Benefit amount input -->
+      <mat-form-field appearance="fill">
+        <mat-label>Montant des prestations</mat-label>
+        <span matSuffix>€</span>
+        <input
+          matInput
+          type="number"
+          required
+          formControlName="benefitAmount"
+        />
+        <mat-error
+          *ngIf="f.benefitAmount.invalid"
+          [for]="f.benefitAmount"
+        ></mat-error>
+      </mat-form-field>
+      <!-- END Benefit amount input -->
+    </div>
+
+    <div class="col-sm-12">
+      <!-- BEGIN Benefit details input -->
+      <mat-form-field appearance="fill">
+        <mat-label> Détails des prestations </mat-label>
+        <textarea
+          matInput
+          #benefitDetailsInput
+          required
+          formControlName="benefitDetails"
+          cdkTextareaAutosize
+          cdkAutosizeMinRows="10"
+          cdkAutosizeMaxRows="20"
+        ></textarea>
+        <mat-hint align="end">
+          {{ benefitDetailsInput.value?.length || 0 }}/2500
+        </mat-hint>
+        <mat-error
+          *ngIf="f.benefitDetails.invalid"
+          [for]="f.benefitDetails"
+        ></mat-error>
+      </mat-form-field>
+      <!-- END Benefit details input -->
+    </div>
+
+    <div class="col-sm-12">
+      <!-- BEGIN Image URL input -->
+      <mat-form-field appearance="fill">
+        <mat-label>URL de l'image</mat-label>
+        <input matInput type="text" required formControlName="imageUrl" />
+        <mat-error *ngIf="f.imageUrl.invalid" [for]="f.imageUrl"></mat-error>
+      </mat-form-field>
+      <!-- END Image URL input -->
+    </div>
+
+    <div class="col-sm-12">
+      <!-- BEGIN Domains input -->
+      <mat-form-field appearance="fill">
+        <mat-label>Domaines</mat-label>
+        <app-chips-multiselect
+          formControlName="domains"
+          [collection]="allDomains"
+          [extractLabelCallback]="extractLabel"
+          [extractIdCallback]="extractId"
+          placeholder="Nouveau domaine..."
+          chipListLabel="Domaines de la référence"
+          [required]="true"
+        ></app-chips-multiselect>
+        <mat-error *ngIf="f.domains.invalid" [for]="f.domains"></mat-error>
+      </mat-form-field>
+      <!-- END Domains input -->
+    </div>
+  </div>
+</form>

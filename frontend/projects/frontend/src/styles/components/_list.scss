@@ -1,0 +1,11 @@
+.mat-list .mat-list-item.full-text {
+  height: initial !important;
+}
+.mat-list .mat-list-item .mat-line {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+.mat-list-base .mat-list-item .mat-line:first-child {
+  color: #7e7c87;
+  font-size: 13px;
+}

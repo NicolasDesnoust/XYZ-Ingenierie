@@ -1,0 +1,16 @@
+.select:not(.is-multiple):not(.is-loading)::after {
+  margin-top: +25px;
+}
+
+.select {
+  margin-bottom: 1.5rem;
+}
+
+.is-horizontal {
+  margin-bottom: 0.75rem;
+}
+
+.mat-form-field {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}

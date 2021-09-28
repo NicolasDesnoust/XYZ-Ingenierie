@@ -1,0 +1,24 @@
+@import '~@angular/material/theming';
+
+.custom-card {
+  .custom-card-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1.5px solid #e3e3e3;
+
+    .custom-card-title {
+      font-size: 17px;
+    }
+  }
+
+  .custom-card-actions {
+    display: flex;
+    margin-left: 0;
+    margin-right: 0;
+
+    .mat-button, .mat-raised-button, .mat-stroked-button {
+      margin: 0;
+    }
+  }
+}

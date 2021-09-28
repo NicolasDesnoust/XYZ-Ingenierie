@@ -1,0 +1,69 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+// Breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+@import '~@angular/material/theming';
+
+$breakpoints: (
+  xsmall: 0,
+  small:  600px,
+  medium: 960px,
+  large:  1280px,
+  xlarge: 1920px
+) !default;
+// Breakpoints
+$large-breakpoint: 1254px !default;
+$medium-breakpoint: 960px !default;
+$small-breakpoint: 600px !default;
+
+// Headers
+$header-heading-color: #fff !default;
+$header-bg-color: #159957 !default;
+$header-bg-color-secondary: #155799 !default;
+
+// Text
+$body-text-color: #606c71 !default;
+$body-link-color: #1e6bb8 !default;
+$blockquote-text-color: #819198 !default;
+
+// Code
+$code-bg-color: #1d1f21 !default;
+$code-text-color: #567482 !default;
+
+// Borders
+$border-color: #dce6f0 !default;
+$table-border-color: #e9ebec !default;
+$hr-border-color: #eff0f1 !default;
+
+// Links
+$link-color: #23a764 !default;
+$link-hover-color: #208f57 !default;
+
+// Fonts
+$font-family: 'Titillium Web', 'Open Sans', sans-serif !default;
+$title-font-family: 'Josefin Sans', sans-serif !default;
+$code-font-family: 'Fira Code', sans-serif !default;
+$letter-spacing: 0.4px;
+
+// Backgrounds
+$body-background-color: #e8eaed !default;
+
+// Toolbar
+$toolbar-height-desktop: 64px !default;
+$toolbar-height-mobile: 56px !default;
+
+// Sidenav
+$sidenav-width: 240px !default;
+$sidenav-collapsed-width: 50px !default;
+$sidenav-width-mobile: 280px !default;
+
+// Topmenu
+$topmenu-sticky-position-desktop: $toolbar-height-desktop !default;
+$topmenu-sticky-position-mobile: $toolbar-height-mobile !default;
+
+// Layout
+$gutter: 16px !default;

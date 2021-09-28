@@ -1,0 +1,130 @@
+@charset "UTF-8";
+
+/* 1. Abstracts (Configuration and helpers) */
+@import 'abstracts/variables', 'abstracts/breakpoints', 'abstracts/transitions';
+
+/* 2. Components */
+@import 'components/button', 'components/card', 'components/chip',
+  'components/elevation', 'components/i-feather', 'components/list';
+
+/* 6. Themes */
+@import 'themes/material-theme';
+
+$angular: #673ab7;
+$angular-light: #266ea1;
+$primary: $angular;
+$primary-light: $angular-light;
+$link: $primary;
+
+$shade-light: #fafafa;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  text-rendering: optimizeLegibility;
+  overflow: auto;
+  letter-spacing: $letter-spacing;
+  background-color: #eef2f7;
+}
+main {
+  background-color: #eef2f7;
+}
+
+button {
+  border-radius: 0.25rem !important;
+}
+
+.menu-list .router-link-active {
+  color: #fff;
+  background-color: $link;
+}
+
+.spacer {
+  flex: 1 0 auto;
+}
+
+.not-found {
+  i {
+    font-size: 20px;
+    margin-right: 8px;
+  }
+  .title {
+    letter-spacing: 0px;
+    font-weight: normal;
+    font-size: 24px;
+    text-transform: none;
+  }
+}
+
+.edit-detail {
+  .input[readonly] {
+    background-color: $shade-light;
+  }
+}
+
+ul.list {
+  box-shadow: none;
+}
+div.card-content {
+  background-color: $shade-light;
+  .name {
+    font-size: 28px;
+    color: #000;
+  }
+  .description {
+    font-size: 20px;
+    color: #999;
+  }
+  background-color: $shade-light;
+}
+.card {
+  margin-bottom: 2em;
+}
+
+label.label {
+  font-weight: normal;
+}
+
+p.card-header-title {
+  background-color: $primary;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #fff;
+  display: block;
+  padding-left: 24px;
+}
+.card-footer button {
+  font-size: 16px;
+  i {
+    margin-right: 10px;
+  }
+  color: #888;
+  &:hover {
+    color: $link;
+  }
+}
+
+.field {
+  margin-bottom: 0.75rem;
+}
+
+.navbar-burger {
+  margin-left: auto;
+}
+
+button.link {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+}

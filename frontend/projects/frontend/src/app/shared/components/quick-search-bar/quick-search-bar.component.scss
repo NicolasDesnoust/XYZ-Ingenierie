@@ -1,0 +1,29 @@
+.filter-bar {
+  width: 100%;
+  display: flex;
+  margin-bottom: 0.5rem;
+
+  ::ng-deep .mat-form-field-outline-start {
+    border-radius: 0;
+  }
+  ::ng-deep .mat-form-field-outline-end {
+    border-radius: 0;
+  }
+  ::ng-deep .mat-form-field-outline {
+    background-color: white;
+    // @include mat-elevation(1);
+  }
+
+  .search-input-field {
+    flex-grow: 5;
+    ::ng-deep .mat-form-field-prefix {
+      align-self: center;
+      margin-left: 1rem;
+      margin-right: 2rem;
+
+      i-feather {
+        width: 1.2rem;
+      }
+    }
+  }
+}
