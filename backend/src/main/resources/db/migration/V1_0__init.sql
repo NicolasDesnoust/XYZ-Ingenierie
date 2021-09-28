@@ -1,0 +1,40 @@
+
+---------------------------------------------------------------------------------------------------------------
+-- Sequences
+---------------------------------------------------------------------------------------------------------------
+
+CREATE SEQUENCE "PUBLIC"."HIBERNATE_SEQUENCE" START WITH 1;
+
+---------------------------------------------------------------------------------------------------------------
+-- Tables
+---------------------------------------------------------------------------------------------------------------
+
+CREATE TABLE "PUBLIC"."DOMAINS"(
+    "ID" BIGINT NOT NULL,
+    "CODE" VARCHAR(255),
+    "NAME" VARCHAR(255)
+);     
+
+CREATE TABLE "PUBLIC"."REFERENCE_DOMAINS"(
+    "REFERENCE_ID" BIGINT NOT NULL,
+    "DOMAIN_ID" BIGINT NOT NULL
+);   
+
+CREATE TABLE "PUBLIC"."REFERENCES"(
+    "ID" BIGINT NOT NULL,
+    "BENEFIT_AMOUNT" DOUBLE NOT NULL,
+    "BENEFIT_DETAILS" VARCHAR(5000),
+    "CITY" VARCHAR(255),
+    "CLIENT_NAME" VARCHAR(255),
+    "DEPARTMENT" VARCHAR(255),
+    "END_YEAR" INTEGER NOT NULL,
+    "IMAGE_URL" VARCHAR(255),
+    "NAME" VARCHAR(255),
+    "START_YEAR" INTEGER NOT NULL
+);
+
+ALTER TABLE "PUBLIC"."REFERENCES" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_6" PRIMARY KEY("ID");   
+ALTER TABLE "PUBLIC"."DOMAINS" ADD CONSTRAINT "PUBLIC"."CONSTRAINT_9" PRIMARY KEY("ID");      
+ALTER TABLE "PUBLIC"."DOMAINS" ADD CONSTRAINT "PUBLIC"."UK_2KQBY88KEUXHKUCVHDHYFF00T" UNIQUE("CODE");         
+ALTER TABLE "PUBLIC"."REFERENCE_DOMAINS" ADD CONSTRAINT "PUBLIC"."FKKAHCMPBMMUKBGC3M0PG8OO7AM" FOREIGN KEY("DOMAIN_ID") REFERENCES "PUBLIC"."DOMAINS"("ID") NOCHECK;          
+ALTER TABLE "PUBLIC"."REFERENCE_DOMAINS" ADD CONSTRAINT "PUBLIC"."FK1NVULOU7XA2MMO72WJ5MSSGGC" FOREIGN KEY("REFERENCE_ID") REFERENCES "PUBLIC"."REFERENCES"("ID") NOCHECK;    

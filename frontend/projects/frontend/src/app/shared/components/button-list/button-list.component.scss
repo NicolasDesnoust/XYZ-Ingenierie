@@ -1,0 +1,68 @@
+$angular: #673ab7;
+$primary: $angular;
+$link: $primary;
+
+::ng-deep
+  .mat-button-toggle-appearance-standard
+  .mat-button-toggle-label-content {
+  line-height: 36px;
+
+  svg {
+    vertical-align: unset;
+    stroke-width: 1.5px;
+    color: #605d5d;
+  }
+}
+
+.mat-button-toggle-group {
+  margin-right: 1rem;
+}
+
+.content-title-group {
+  display: flex;
+  margin-bottom: 16px;
+
+  button {
+
+    &.add-button {
+      ::ng-deep .mat-button-wrapper {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+
+      ::ng-deep i-feather {
+        margin-left: 0.5rem;
+        vertical-align: revert;
+        svg {
+          width: 1rem !important;
+        }
+      }
+    }
+
+    i-feather {
+      vertical-align: initial;
+    }
+
+    mat-icon {
+      vertical-align: baseline;
+    }
+  }
+  button:not(:last-of-type) {
+    margin-right: 0.5rem;
+  }
+
+  a {
+    display: flex;
+
+    h2 {
+      align-self: end;
+      padding-left: 8px;
+      padding-right: 16px;
+      display: inline-block;
+      font-size: 20px;
+      color: #555;
+      letter-spacing: 0px;
+      margin: 0;
+    }
+  }
+}

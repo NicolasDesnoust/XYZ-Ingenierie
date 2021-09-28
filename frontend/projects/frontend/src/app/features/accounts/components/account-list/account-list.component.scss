@@ -1,0 +1,223 @@
+@import '~@angular/material/theming';
+
+.panel-block {
+  margin-bottom: 1.5rem;
+}
+
+// ::ng-deep .actions button, .actions i-feather, .actions svg {
+//   align-items: center !important;
+//   justify-content: center !important;
+//   display: flex !important;
+// }
+
+button.mat-menu-item {
+  display: flex;
+  align-items: center;
+}
+
+::ng-deep .actions i-feather {
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+
+::ng-deep .mat-menu-content {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+
+  i-feather {
+    margin-right: 1rem;
+    width: 1.2rem;
+  }
+}
+
+.mat-chip.mat-standard-chip {
+  background-color: #ebf0ff;
+  color: rgb(53 47 89 / 87%);
+}
+
+.mat-row:nth-child(odd) {
+  background-color: #fdfdff;
+}
+
+.mat-chip {
+  width: max-content;
+  min-width: 5rem;
+  display: flex;
+  justify-content: center;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.cell-container {
+  // width: max-content;
+  // max-width: 140px;
+  display: table-cell;
+}
+
+.mat-cell,
+.mat-footer-cell,
+.mat-header-cell {
+  box-sizing: border-box;
+  padding: 10px 10px;
+}
+
+.mat-table:not(.mat-column-resize-table) .mat-cell,
+.mat-table:not(.mat-column-resize-table) .mat-footer-cell,
+.mat-table:not(.mat-column-resize-table) .mat-header-cell {
+  width: max-content;
+  display: table-cell;
+}
+
+.col {
+  display: flex;
+  padding-right: 7.5px;
+  padding-left: 7.5px;
+  justify-content: center;
+}
+
+.water-chip {
+  color: #33597a;
+  background-color: #a7d4fb;
+}
+.urbanPlanning-chip {
+  color: #7a5f33;
+  background-color: #fbdda7;
+}
+.industry-chip {
+  color: #5f5f5f;
+  background-color: #e6e6e6;
+}
+.building-chip {
+  color: #7a4433;
+  background-color: #fbbfa7;
+}
+.environment-chip {
+  color: #557a33;
+  background-color: #d4f1cb;
+}
+.transport-chip {
+  color: #74337a;
+  background-color: #eecbf1;
+}
+.energy-chip {
+  color: #7e7525;
+  background-color: #f6e99c;
+}
+
+.mat-card {
+  flex-grow: 1;
+  margin-bottom: 1rem;
+  border-radius: 0;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  width: auto;
+  min-width: 20rem;
+  max-width: 30rem;
+
+  &-title {
+    font-size: 18px;
+  }
+  &-subtitle {
+    margin-bottom: 6px;
+  }
+  &-header-text {
+    height: 10px;
+    margin-bottom: 2.7rem;
+  }
+  .more-button {
+    margin-top: 0.4rem;
+    margin-left: 0.5rem;
+  }
+
+  .divider-container {
+    display: flex;
+    align-content: center;
+
+    .mat-divider {
+      width: 80%;
+    }
+  }
+
+  .example-header-image {
+    background-size: cover;
+    background-color: #f4f0fb;
+    width: 50px;
+    height: 50px;
+
+    &.building {
+      background-image: url('/assets/images/building.png');
+    }
+    &.urbanPlanning {
+      background-image: url('/assets/images/urbanPlanning.png');
+    }
+    &.transport {
+      background-image: url('/assets/images/transport.png');
+    }
+    &.industry {
+      background-image: url('/assets/images/industry.png');
+    }
+    &.water {
+      background-image: url('/assets/images/water.png');
+    }
+    &.environment {
+      background-image: url('/assets/images/environment.png');
+    }
+    &.energy {
+      background-image: url('/assets/images/energy.png');
+    }
+  }
+
+  .zoom {
+    transition: transform 0.01s;
+    -webkit-transition: transform 0.01s;
+    -moz-transition: transform 0.01s;
+  }
+
+  .zoom:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+  }
+
+  .mat-card-actions {
+    margin-bottom: 0;
+
+    button {
+      mat-icon {
+        font-size: 22px;
+      }
+
+      &.delete-button {
+        margin-right: 0.3rem;
+      }
+    }
+  }
+}
+
+th.mat-header-cell:last-of-type,
+td.mat-cell:last-of-type,
+td.mat-footer-cell:last-of-type {
+  padding-right: 10px;
+}
+
+.actions {
+  display: flex;
+
+  ::ng-deep button {
+    padding: 0 8px;
+    min-width: 40px;
+
+    svg {
+      width: 1.2rem;
+      vertical-align: initial;
+    }
+  }
+}
+
+.mat-table-sticky {
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+}

@@ -1,0 +1,109 @@
+<mat-progress-bar
+  [style.visibility]="loading ? 'visible' : 'hidden'"
+  mode="indeterminate"
+></mat-progress-bar>
+
+<div
+  class="table-wrapper"
+  style="display: flex; flex: 1 1 auto; overflow: auto"
+>
+  <table
+    mat-table
+    matSort
+    [matSortActive]="sortingProperty"
+    [matSortDirection]="sortingOrder"
+    matSortDisableClear
+    [dataSource]="dataSource"
+  >
+    <!-- BEGIN Basic Columns -->
+    <!-- * These columns all have a basic behavior so
+             * they can be displayed using a *ngFor loop -->
+    <ng-container *ngFor="let displayedColumn of displayedColumns | keyvalue">
+      <ng-container
+        [matColumnDef]="displayedColumn.key"
+        *ngIf="displayedColumn.value?.displayedAuto"
+      >
+        <th mat-header-cell mat-sort-header *matHeaderCellDef>
+          {{ displayedColumn.value?.label }}
+        </th>
+        <td mat-cell *matCellDef="let account">
+          <span class="cell-container">
+            {{ account[displayedColumn.key] }}
+          </span>
+        </td>
+      </ng-container>
+    </ng-container>
+    <!-- END Basic Columns -->
+
+    <ng-container matColumnDef="roles">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef>
+        {{ displayedColumns['roles']?.label }}
+      </th>
+      <td mat-cell *matCellDef="let account">
+        <mat-chip-list aria-label="Rôles de l'utilisateur">
+          <mat-chip
+            *ngFor="let role of asAccount(account).roles"
+            ngClass="{{ role.code }}-chip"
+          >
+            {{ role.name }}
+          </mat-chip>
+        </mat-chip-list>
+      </td>
+    </ng-container>
+
+    <ng-container stickyEnd matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>
+        {{ displayedColumns['actions']?.label }}
+      </th>
+      <td mat-cell *matCellDef="let account">
+        <div class="actions">
+          <!-- BEGIN View button -->
+          <button
+            class="mat-elevation-z0 button-std"
+            mat-button
+            aria-label="View button"
+            matTooltip="Voir le compte utilisateur"
+            [routerLink]="'/accounts/' + account.id"
+          >
+            <i-feather name="eye"></i-feather>
+          </button>
+          <!-- END View button -->
+
+          <!-- BEGIN More menu -->
+          <button
+            class="mat-elevation-z0 button-std"
+            mat-button
+            [matMenuTriggerFor]="menu"
+            aria-label="More button"
+          >
+            <i-feather name="more-vertical"></i-feather>
+          </button>
+
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="selected.emit(account)">
+              <i-feather name="edit"></i-feather>
+              <span>Modifier</span>
+            </button>
+            <button mat-menu-item (click)="deleted.emit(account)">
+              <i-feather name="trash-2"></i-feather>
+              <span>Supprimer</span>
+            </button>
+          </mat-menu>
+          <!-- END More menu -->
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumnNames"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumnNames"></tr>
+  </table>
+</div>
+
+<mat-paginator
+  [length]="totalCount"
+  [pageSize]="pageSize"
+  [pageIndex]="pageIndex"
+  showFirstLastButtons
+  [pageSizeOptions]="pageSizeOptions"
+>
+</mat-paginator>

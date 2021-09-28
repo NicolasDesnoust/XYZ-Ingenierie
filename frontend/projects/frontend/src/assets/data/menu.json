@@ -1,0 +1,16 @@
+{
+  "menu": [
+    {
+      "route": "references",
+      "name": "references",
+      "type": "link",
+      "icon": "file-text"
+    },
+    {
+      "route": "accounts",
+      "name": "accounts",
+      "type": "link",
+      "icon": "users"
+    }
+  ]
+}

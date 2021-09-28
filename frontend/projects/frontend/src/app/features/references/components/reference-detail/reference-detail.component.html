@@ -1,0 +1,93 @@
+<div class="row">
+  <div class="col-6">
+    <mat-list>
+      <mat-list-item>
+        <div mat-line>Identifiant</div>
+        <div mat-line>{{ reference?.id }}</div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+
+  <div class="col-6">
+    <mat-list>
+      <mat-list-item>
+        <div mat-line>Nom</div>
+        <div mat-line>{{ reference?.name }}</div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+
+  <div class="col-6">
+    <mat-list>
+      <mat-list-item>
+        <div mat-line>Nom du client</div>
+        <div mat-line>{{ reference?.clientName }}</div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+
+  <div class="col-6">
+    <mat-list>
+      <mat-list-item>
+        <div mat-line>Lieu</div>
+        <div mat-line>{{ reference?.city }} {{ reference?.department }}</div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+
+  <div class="col-6">
+    <mat-list>
+      <mat-list-item>
+        <div mat-line>Durée</div>
+        <div mat-line>{{ reference?.startYear }}-{{ reference?.endYear }}</div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+
+  <div class="col-6">
+    <mat-list>
+      <mat-list-item>
+        <div mat-line>Montant des prestations</div>
+        <div mat-line>
+          {{ reference?.benefitAmount | currency: 'EUR' }}
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+
+  <div class="col-6">
+    <mat-list>
+      <mat-list-item>
+        <div mat-line>Image</div>
+        <div mat-line>{{ reference?.imageUrl }}</div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+
+  <div class="col-6">
+    <mat-list>
+      <mat-list-item>
+        <div mat-line>Domaines</div>
+        <div mat-line>
+          <mat-chip-list aria-label="Domaines de la référence">
+            <mat-chip
+              *ngFor="let domain of reference?.domains"
+              ngClass="{{ domain.code }}-chip"
+            >
+              {{ domain.name }}
+            </mat-chip>
+          </mat-chip-list>
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+
+  <div class="col-12">
+    <mat-list>
+      <mat-list-item class="full-text">
+        <div mat-line>Détail des prestations</div>
+        <p mat-line>{{ reference?.benefitDetails }}</p>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>

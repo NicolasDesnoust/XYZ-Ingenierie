@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-6">
+    <mat-list>
+      <mat-list-item>
+        <div mat-line>Identifiant</div>
+        <div mat-line>{{ account?.id }}</div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+
+  <div class="col-6">
+    <mat-list>
+      <mat-list-item>
+        <div mat-line>Nom</div>
+        <div mat-line>{{ account?.firstname }} {{ account?.lastname }}</div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+
+  <div class="col-6">
+    <mat-list>
+      <mat-list-item>
+        <div mat-line>E-mail</div>
+        <div mat-line>{{ account?.email }}</div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+
+  <div class="col-6">
+    <mat-list>
+      <mat-list-item>
+        <div mat-line>Rôles</div>
+        <div mat-line>
+          <mat-chip-list aria-label="Rôles de l'utilisateur">
+            <mat-chip
+              *ngFor="let role of account?.roles"
+              ngClass="{{ role.code }}-chip"
+            >
+              {{ role.name }}
+            </mat-chip>
+          </mat-chip-list>
+        </div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>
